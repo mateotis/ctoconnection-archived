@@ -34,3 +34,9 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+# Ignore .env file with env variables
+.env
+
+# Ignore test coverage
+/coverage
