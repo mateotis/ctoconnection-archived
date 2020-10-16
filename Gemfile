@@ -32,12 +32,12 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'dotenv-rails'
   gem 'factory_bot_rails'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'webdrivers'
   gem 'webmock'
-  gem 'dotenv-rails'
 end
 
 group :development do
