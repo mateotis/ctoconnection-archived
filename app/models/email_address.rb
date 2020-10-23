@@ -3,7 +3,7 @@ class EmailAddress < ApplicationRecord
 
   before_validation :normalize_email_address, on: %i[create update]
 
-  validates :email_address, presence: true, uniqueness: { case_sensitive: false }
+  validates :email_address, presence: true, uniqueness: { case_sensitive: false }, format: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
 
   private
 

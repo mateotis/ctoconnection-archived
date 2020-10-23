@@ -4,11 +4,12 @@ class User < ApplicationRecord
   before_validation :normalize_attributes, on: %i[create update]
 
   validates :linkedin_username, uniqueness: { allow_nil: true }
+  validates :email, presence: true, uniqueness: { case_sensitive: false }, format: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
 
   private
 
   def normalize_attributes
-    %w[first_name last_name linkedin_username].each do |name|
+    %w[first_name last_name linkedin_username email].each do |name|
       send("#{name}=", send(name).strip.downcase) if send(name).respond_to?(:strip, :downcase)
     end
   end
