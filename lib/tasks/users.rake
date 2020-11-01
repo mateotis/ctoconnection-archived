@@ -37,7 +37,7 @@ namespace :users do
       @user = User.find_by(linkedin_username: linkedin_username)
       @user ? add_additional_email_address_for_user(row['Email']&.strip&.downcase) : add_new_user(linkedin_username, row)
     rescue StandardError => e
-      puts "Could not import #{row.to_s} #{e.message}"
+      puts "Could not import #{row} #{e.message}"
     end
   end
 end
