@@ -70,7 +70,7 @@ class SessionDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how sessions are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(session)
-  #   "Session ##{session.id}"
-  # end
+  def display_resource(session)
+    session.title
+  end
 end

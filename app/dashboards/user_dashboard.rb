@@ -12,7 +12,7 @@ class UserDashboard < Administrate::BaseDashboard
     email_addresses: Field::HasMany,
     first_name: Field::String,
     last_name: Field::String,
-    email: Field::String,
+    email: Field::Email,
     linkedin_username: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime
@@ -69,7 +69,7 @@ class UserDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how users are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(user)
-  #   "User ##{user.id}"
-  # end
+  def display_resource(user)
+    user.full_name
+  end
 end

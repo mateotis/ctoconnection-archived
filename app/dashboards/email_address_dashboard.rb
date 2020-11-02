@@ -9,7 +9,7 @@ class EmailAddressDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    email_address: Field::String,
+    email_address: Field::Email,
     primary: Field::Boolean,
     home: Field::Boolean,
     user: Field::BelongsTo,
@@ -67,7 +67,7 @@ class EmailAddressDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how email addresses are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(email_address)
-  #   "EmailAddress ##{email_address.id}"
-  # end
+  def display_resource(_email_address)
+    'email address'
+  end
 end

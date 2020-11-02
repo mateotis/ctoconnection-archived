@@ -93,7 +93,7 @@ class PresentationDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how presentations are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(presentation)
-  #   "Presentation ##{presentation.id}"
-  # end
+  def display_resource(presentation)
+    presentation.title
+  end
 end

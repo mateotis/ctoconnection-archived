@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :companies
     resources :events
     resources :users
+    resources :email_addresses
     resources :activities
     resources :sessions
     resources :presentations
