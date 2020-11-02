@@ -1,4 +1,4 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class PresentationDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -12,7 +12,7 @@ class PresentationDashboard < Administrate::BaseDashboard
     session: Field::BelongsTo,
     event: Field::BelongsTo,
     company: Field::BelongsTo,
-    presented_by: Field::BelongsTo.with_options(class_name: "User"),
+    presented_by: Field::BelongsTo.with_options(class_name: 'User'),
     id: Field::Number,
     title: Field::String,
     presenter_firstname: Field::String,
@@ -21,9 +21,8 @@ class PresentationDashboard < Administrate::BaseDashboard
     presenter_email: Field::String,
     presenter_title: Field::String,
     presenter_company: Field::String,
-    presented_by_id: Field::Number,
     created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    updated_at: Field::DateTime
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -32,50 +31,51 @@ class PresentationDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-  activity
-  session
-  event
-  company
+    id
+    title
+    activity
+    session
+    event
+    company
+    presented_by
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  activity
-  session
-  event
-  company
-  presented_by
-  id
-  title
-  presenter_firstname
-  presenter_lastname
-  presenter_linkedin_username
-  presenter_email
-  presenter_title
-  presenter_company
-  presented_by_id
-  created_at
-  updated_at
+    id
+    title
+    activity
+    session
+    event
+    company
+    presented_by
+    presenter_firstname
+    presenter_lastname
+    presenter_linkedin_username
+    presenter_email
+    presenter_title
+    presenter_company
+    created_at
+    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-  activity
-  session
-  event
-  company
-  presented_by
-  title
-  presenter_firstname
-  presenter_lastname
-  presenter_linkedin_username
-  presenter_email
-  presenter_title
-  presenter_company
-  presented_by_id
+    event
+    session
+    activity
+    company
+    presented_by
+    title
+    presenter_firstname
+    presenter_lastname
+    presenter_linkedin_username
+    presenter_email
+    presenter_title
+    presenter_company
   ].freeze
 
   # COLLECTION_FILTERS
