@@ -9,6 +9,7 @@ class ActivityDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
+    title: Field::String,
     session: Field::BelongsTo,
     activity_type: Field::Select.with_options(searchable: false, collection: ->(field) { field.resource.class.send(field.attribute.to_s.pluralize).keys }),
     starts: Field::DateTime,
@@ -24,6 +25,7 @@ class ActivityDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
+    title
     activity_type
     starts
     ends
@@ -34,6 +36,7 @@ class ActivityDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
+    title
     activity_type
     starts
     ends
@@ -47,6 +50,7 @@ class ActivityDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     session
+    title
     activity_type
     starts
     ends
@@ -68,6 +72,6 @@ class ActivityDashboard < Administrate::BaseDashboard
   # across all pages of the admin dashboard.
   #
   def display_resource(activity)
-    "##{activity.id} - #{activity.activity_type}"
+    activity.title
   end
 end

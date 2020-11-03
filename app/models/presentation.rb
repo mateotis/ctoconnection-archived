@@ -3,7 +3,7 @@ class Presentation < ApplicationRecord
   belongs_to :session
   belongs_to :event
   belongs_to :company
-  belongs_to :presented_by, class_name: 'User', required: false
+  belongs_to :presented_by, class_name: 'User'
 
   validates :title, presence: true
 end
