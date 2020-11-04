@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'home#show'
+  root 'pages#home'
   get 'dashboard', to: 'dashboard#show'
   get 'auth/auth0/callback', to: 'auth0#callback'
   get 'auth/failure', to: 'auth0#failure'
