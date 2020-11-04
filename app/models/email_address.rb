@@ -8,6 +8,6 @@ class EmailAddress < ApplicationRecord
   private
 
   def normalize_email_address
-    self.email_address = email_address.strip.downcase
+    self.email_address = email_address&.strip&.downcase
   end
 end

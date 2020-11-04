@@ -5,7 +5,10 @@ FactoryBot.define do
     end
     last_name { 'person' }
     sequence :linkedin_username do |n|
-      "test#{n}person"
+      "testperson#{n}"
+    end
+    sequence :email do |n|
+      "testperson#{n}@gmail.com"
     end
   end
 end

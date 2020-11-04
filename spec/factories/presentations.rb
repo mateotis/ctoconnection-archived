@@ -1,16 +1,12 @@
 FactoryBot.define do
   factory :presentation do
-    activity { nil }
-    session { nil }
-    event { nil }
-    title { 'MyString' }
-    presenter_firstname { 'MyString' }
-    presenter_lastname { 'MyString' }
-    presenter_linkedin_username { 'MyString' }
-    presenter_email { 'MyString' }
-    presenter_title { 'MyString' }
-    presenter_company { 'MyString' }
-    company { nil }
-    user { nil }
+    association :activity
+    association :session
+    association :event
+    association :company
+    association :presented_by, factory: :user
+    sequence :title do |n|
+      "Test Presentation #{n}"
+    end
   end
 end

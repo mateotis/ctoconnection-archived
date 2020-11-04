@@ -1,9 +1,11 @@
 FactoryBot.define do
   factory :session do
-    title { 'MyString' }
-    starts { '2020-10-26 14:19:27' }
-    ends { '2020-10-26 14:19:27' }
-    duration { 1 }
-    event { nil }
+    association :event
+    sequence :title do |n|
+      "Test Session #{n}"
+    end
+    starts { '2020-10-01 17:00:00' }
+    ends { '2020-10-01 18:00:00' }
+    duration { 60 }
   end
 end

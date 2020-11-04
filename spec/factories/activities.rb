@@ -1,8 +1,11 @@
 FactoryBot.define do
   factory :activity do
-    type { 1 }
-    starts { '2020-10-26 14:44:13' }
-    ends { '2020-10-26 14:44:13' }
-    references { '' }
+    association :session
+    sequence :title do |n|
+      "Test Activity #{n}"
+    end
+    activity_type { 'presentation' }
+    starts { '2020-10-01 17:00:00' }
+    ends { '2020-10-01 18:00:00' }
   end
 end

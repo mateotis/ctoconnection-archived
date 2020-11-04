@@ -8,10 +8,17 @@ RSpec.describe User, type: :model do
   end
 
   context 'validations' do
-    it 'is invalid without a unique linkedin username' do
-      new_user = FactoryBot.build(:user, linkedin_username: user.linkedin_username)
-      expect(new_user).to_not be_valid
-      expect(new_user.errors.full_messages).to eq(['Linkedin username has already been taken'])
+    context 'linkedin_username' do
+      it { expect(user).to validate_uniqueness_of(:linkedin_username).ignoring_case_sensitivity }
     end
+
+    context 'email' do
+      it { expect(user).to validate_presence_of(:email) }
+      it { expect(user).to validate_uniqueness_of(:email).ignoring_case_sensitivity }
+    end
+  end
+
+  context 'associations' do
+    it { expect(user).to have_many(:email_addresses) }
   end
 end
