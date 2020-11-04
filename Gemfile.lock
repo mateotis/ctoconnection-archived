@@ -69,6 +69,10 @@ GEM
       momentjs-rails (~> 2.8)
       sassc-rails (~> 2.1)
       selectize-rails (~> 0.6)
+    airbrake (11.0.1)
+      airbrake-ruby (~> 5.1)
+    airbrake-ruby (5.1.0)
+      rbtree3 (~> 0.5)
     ast (2.4.1)
     autoprefixer-rails (10.0.1.0)
       execjs
@@ -227,6 +231,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    rbtree3 (0.6.0)
     regexp_parser (1.8.2)
     rexml (3.2.4)
     rspec-core (3.9.3)
@@ -329,6 +334,7 @@ PLATFORMS
 
 DEPENDENCIES
   administrate
+  airbrake
   better_errors
   bootsnap (>= 1.4.2)
   byebug
