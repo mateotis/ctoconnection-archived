@@ -12,4 +12,9 @@ class Auth0Controller < ApplicationController
     # show a failure page or redirect to an error page
     @error_msg = request.params['message']
   end
+
+  def logout
+    reset_session
+    redirect_to root_path
+  end
 end

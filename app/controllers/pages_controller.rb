@@ -1,4 +1,9 @@
 class PagesController < ApplicationController
-  def about; end
+  before_action :authenticate_user!, only: [:dashboard]
+
   def home; end
+
+  def about; end
+
+  def dashboard; end
 end
