@@ -8,4 +8,7 @@ class PagesController < ApplicationController
   def contact; end
 
   def dashboard; end
+
+  def code_of_conduct; end
+
 end
