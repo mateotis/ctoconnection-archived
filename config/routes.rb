@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'auth/auth0/callback', to: 'auth0#callback'
   get 'auth/failure', to: 'auth0#failure'
   get 'logout', to: 'auth0#logout'
+  get 'apply', to: 'applicants#new'
 
   namespace :admin do
     root to: 'events#index'
