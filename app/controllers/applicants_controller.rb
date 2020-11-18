@@ -1,5 +1,7 @@
 class ApplicantsController < ApplicationController
 
-  def new; end
+	def new
+		@applicant = Applicant.new
+	end
 
 end
