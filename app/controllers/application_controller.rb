@@ -1,4 +1,8 @@
 class ApplicationController < ActionController::Base
-  include AuthenticationHelper
-  protect_from_forgery with: :null_session
+  include Auth
+  include RoleChecker
+
+  protect_from_forgery with: :exception
+
+  before_action :authenticate_user!
 end

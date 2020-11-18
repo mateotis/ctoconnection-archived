@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :authenticate_user!, only: [:dashboard]
+  skip_before_action :authenticate_user!, except: :dashboard
 
   def home; end
 

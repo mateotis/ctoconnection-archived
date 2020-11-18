@@ -1,0 +1,92 @@
+@media screen and (max-width: $xsmall-screen-max) {
+  .offset-left-1-24 {
+  }
+  .offset-left-2-14, .offset-left-1-12 {
+  }
+  .offset-left-3-24, .offset-left-1-8 {
+  }
+  .offset-left-4-24, .offset-left-2-12, .offset-left-1-6 {
+  }
+  .offset-left-5-24 {
+  }
+  .offset-left-6-24, .offset-left-3-12, .offset-left-2-8, .offset-left-1-4 {
+  }
+  .offset-left-7-24 {
+  }
+  .offset-left-8-24, .offset-left-4-12, .offset-left-2-6, .offset-left-1-3 {
+  }
+  .offset-left-9-24, .offset-left-3-8 {
+  }
+  .offset-left-10-24, .offset-left-5-12 {
+  }
+  .offset-left-11-24 {
+  }
+  .offset-left-12-24, .offset-left-6-12, .offset-left-4-8, .offset-left-3-6, .offset-left-2-4, .offset-left-1-2 {
+  }
+  .offset-left-13-24 {
+  }
+  .offset-left-14-24, .offset-left-7-12 {
+  }
+  .offset-left-15-24, .offset-left-5-8 {
+  }
+  .offset-left-16-24, .offset-left-8-12, .offset-left-4-6, .offset-left-2-3 {
+  }
+  .offset-left-17-24 {
+  }
+  .offset-left-18-24, .offset-left-9-12, .offset-left-6-8, .offset-3-4 {
+  }
+  .offset-left-19-24 {
+  }
+  .offset-left-20-24, .offset-left-10-12, .offset-left-5-6 {
+  }
+  .offset-left-21-24, .offset-left-7-8 {
+  }
+  .offset-left-22-24, .offset-left-11-12 {
+  }
+  .offset-left-23-24 {
+  }
+  .offset-left-24-24, .offset-left-12-12, .offset-left-8-8, .offset-left-6-6, .offset-left-4-4, .offset-left-3-3, .offset-left-2-2, .offset-left-1 {
+  }
+  .offset-left-1-2 {
+    margin-left: 50%
+  }
+  .offset-right-1-2 {
+    margin-right: 50%
+  }
+}
+
+@media screen and (min-width: $small-screen-min) and (max-width: $small-screen-max) {
+  .offset-left-sm-1-2 {
+    margin-left: 50%
+  }
+  .offset-right-sm-1-2 {
+    margin-right: 50%
+  }
+}
+
+@media screen and (min-width: $medium-screen-min) and (max-width: $medium-screen-max) {
+  .offset-left-md-1-2 {
+    margin-left: 50%
+  }
+  .offset-right-md-1-2 {
+    margin-right: 50%
+  }
+}
+
+@media screen and (min-width: $large-screen-min) and (max-width: $large-screen-max) {
+  .offset-left-lg-1-2 {
+    margin-left: 50%
+  }
+  .offset-right-lg-1-2 {
+    margin-right: 50%
+  }
+}
+
+@media screen and (min-width: $xlarge-screen-min) {
+  .offset-left-xl-1-2 {
+    margin-left: 50%
+  }
+  .offset-right-xl-1-2 {
+    margin-right: 50%
+  }
+}

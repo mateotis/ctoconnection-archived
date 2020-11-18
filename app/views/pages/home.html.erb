@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <%= button_to 'Logout', 'logout', method: :get %>
+  <%= link_to 'Logout', 'logout' %>
 <% else %>
-  <%= button_to 'Login', 'auth/auth0', method: :post %>
+  <%= link_to 'Login', 'auth/auth0', method: :post %>
 <% end %>

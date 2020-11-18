@@ -1,0 +1,16 @@
+<header>
+  <div class="logos">
+    <%= link_to image_tag('cdx-logo', alt: 'CDx Connection'), '#', title: 'CDx Connection', class: 'cdx-logo' %>
+    <span class="separator"></span>
+    <%= link_to image_tag('aws-logo', alt: 'Partnership with AWS'), '#', title: 'Partnership with AWS', class: 'partner-logo' %>
+  </div>
+
+  <nav class="header-nav">
+    <ul>
+      <%= link_to 'Home', root_path, class: 'header-nav-item active', title: 'Home' %>
+      <%= link_to 'About', about_path, class: 'header-nav-item', title: 'About' %>
+      <%= link_to 'Events', '#', class: 'header-nav-item', title: 'Events' %>
+      <%= link_to 'Contact', contact_path, class: 'header-nav-item', title: 'Contact' %>
+    </ul>
+  </nav>
+</header>
