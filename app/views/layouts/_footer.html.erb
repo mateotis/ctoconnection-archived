@@ -1,9 +1,15 @@
 <footer>
   <nav class="footer-nav">
     <ul>
-      <li class="footer-nav-item"><a href="#" title="About us">About us</a></li>
-      <li class="footer-nav-item"><a href="#" title="Contact Us">Contact Us</a></li>
-      <li class="footer-nav-item"><a href="#" title="Code of conduct">Code of conduct</a></li>
+      <li>
+        <%= link_to 'About', about_path, class: 'footer-nav-item', title: 'About' %>
+      </li>
+      <li>
+        <%= link_to 'Contact', contact_path, class: 'footer-nav-item', title: 'Contact' %>
+      </li>
+      <li>
+        <%= link_to 'Code of conduct', code_of_conduct_path, class: 'footer-nav-item', title: 'Code of conduct' %>
+      </li>
     </ul>
   </nav>
   <div class="copyright">
