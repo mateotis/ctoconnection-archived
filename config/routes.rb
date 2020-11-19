@@ -7,14 +7,17 @@ Rails.application.routes.draw do
   get 'auth/auth0/callback', to: 'auth0#callback'
   get 'auth/failure', to: 'auth0#failure'
   get 'logout', to: 'auth0#logout'
-  get 'apply', to: 'applicants#new'
+  get 'apply/new', to: 'applicants#new'
+  get 'apply', to: 'applicants#create'
+  
+  resources :applicants
 
   namespace :admin do
     root to: 'events#index'
     resources :companies
     resources :events
     resources :users
-    resources :applicants
+
     resources :email_addresses
     resources :activities
     resources :sessions
