@@ -1,5 +1,14 @@
 <div class='applicant-apply-form'>
 
 <h1>New Applicant</h1>
+<%= simple_form_for(:user, :url =>{:controller => 'applicants', :action => 'new'}) do |f| %>
+    <%= f.input :first_name, required: true %>
+    <%= f.input :last_name, required: true %>
+    <%= f.input :email, required: true %>
+    <%= f.input :username, required: true%>
+    <%= f.input :password, required: true %>
+    <%= f.button :submit %>
+  <% end %>
 
+  <%= button_to 'Apply', 'apply', :method => "get" %>
 </div>
