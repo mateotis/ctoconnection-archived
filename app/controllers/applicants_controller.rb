@@ -1,5 +1,7 @@
 class ApplicantsController < ApplicationController
 
+	protect_from_forgery with: :null_session
+
 	def new
 		@applicant = Applicant.new
 	end
@@ -7,7 +9,8 @@ class ApplicantsController < ApplicationController
 	def create
 		@applicant = Applicant.new(applicant_params)
 		if @applicant.save
-			redirect_to :root
+			flash[:notice] = 'Thanks for applying!'
+			redirect_to root_url
 		else
 			render :new
 		end
