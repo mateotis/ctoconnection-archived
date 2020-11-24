@@ -1,4 +1,6 @@
 class Auth0Controller < ApplicationController
+  skip_before_action :authenticate_user!, except: :logout
+
   def callback
     # This stores all the user information that came from Auth0
     # and the IdP

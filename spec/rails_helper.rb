@@ -17,7 +17,7 @@ SimpleCov.start
 # run twice. It is recommended that you do not name files matching this glob to
 # end with _spec.rb. You can configure this pattern with the --pattern
 # option on the command line or in ~/.rspec, .rspec or `.rspec-local`.
-#
+Dir[Rails.root.join('spec/support/**/*.rb')].sort.each { |f| require f }
 # The following line is provided for convenience purposes. It has the downside
 # of increasing the boot-up time by auto-requiring all files in the support
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
@@ -41,15 +41,18 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = false
-  config.before(:suite) { DatabaseCleaner.clean_with(:truncation) }
-  config.before(:each) { DatabaseCleaner.strategy = :transaction }
-  config.before(:each, js: true) { DatabaseCleaner.strategy = :truncation }
-  config.before(:each) { DatabaseCleaner.start }
-  config.after(:each) { DatabaseCleaner.clean }
-
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
 
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+  end
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
   # `post` in specs under `spec/controllers`.
@@ -70,6 +73,7 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
   config.include FactoryBot::Syntax::Methods
+  config.include Auth, type: :feature
 end
 
 Shoulda::Matchers.configure do |config|

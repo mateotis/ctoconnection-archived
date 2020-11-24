@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ctoconnection</title>
+    <title>CTO Connection</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,11 +12,16 @@
   </head>
 
   <body>
+
     <% flash.each do |name, msg| %>
       <ul>
         <li><%= msg %></li>
       </ul>
     <% end %>
+
+    <%= render 'layouts/nav_bar' %>
+    <%= render 'layouts/flash_messages' %>
     <%= yield %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

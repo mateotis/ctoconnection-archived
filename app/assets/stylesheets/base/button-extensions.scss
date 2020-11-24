@@ -1,0 +1,45 @@
+.button-primary,
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary,
+.button-alternate {
+  color: white !important;
+}
+
+.button-success {
+  background-color: $cto-green;
+}
+
+.button-error,
+.button-warning {
+  background-color: $cto-red;
+}
+
+.button-primary {
+  background-color: $cto-orange;
+}
+
+.button-secondary {
+  background-color: $cto-blue;
+}
+
+.button-alternate {
+  background-color: $cto-gray;
+}
+
+.button-xsmall {
+  font-size: 70%;
+}
+
+.button-small {
+  font-size: 85%;
+}
+
+.button-large {
+  font-size: 115%;
+}
+
+.button-xlarge {
+  font-size: 125%;
+}
