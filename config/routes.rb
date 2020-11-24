@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'logout', to: 'auth0#logout'
   get 'apply/new', to: 'applicants#new'
   get 'apply', to: 'applicants#create'
-  
+
   resources :applicants
 
   namespace :admin do
@@ -17,10 +17,14 @@ Rails.application.routes.draw do
     resources :companies
     resources :events
     resources :users
-
     resources :email_addresses
     resources :activities
     resources :sessions
     resources :presentations
+  end
+
+  namespace :useradmin do
+    root to: 'users#index'
+    resources :users
   end
 end
