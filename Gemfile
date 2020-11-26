@@ -8,8 +8,6 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 
 # Admin dashboards
 gem 'administrate'
-# Airbrake for error monitoring
-gem 'airbrake'
 # Auth0
 gem 'omniauth-auth0', '~> 2.2'
 gem 'omniauth-rails_csrf_protection', '~> 0.1'
