@@ -7,9 +7,18 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= render('layouts/header') %>
   </head>
 
   <body>
+
+    <% flash.each do |name, msg| %>
+      <ul>
+        <li><%= msg %></li>
+      </ul>
+    <% end %>
+
     <%= render 'layouts/nav_bar' %>
     <%= render 'layouts/flash_messages' %>
     <%= yield %>
