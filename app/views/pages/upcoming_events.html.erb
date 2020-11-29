@@ -1,0 +1,7 @@
+<h1> Upcoming Events </h1>
+
+<% @talks do |talk| %>
+    <h1><% talk.title %></h3>
+    <p><%= talk.start_time %></p>
+    <p><%= talk.end_time %></p>
+<% end %>

@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   get 'logout', to: 'auth0#logout'
   get 'apply/new', to: 'applicants#new'
   get 'apply', to: 'applicants#create'
-  get 'coming_events', to: 'pages#coming_events'
+  get 'new_events', to: 'pages#new_events'
+  get 'upcoming_events', to: 'pages#upcoming_events'
 
   resources :applicants
 
@@ -23,6 +24,7 @@ Rails.application.routes.draw do
     resources :sessions
     resources :presentations
     resources :new_events
+    resources :talks
   end
 
   namespace :useradmin do
