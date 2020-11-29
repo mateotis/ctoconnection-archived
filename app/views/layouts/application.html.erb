@@ -22,14 +22,6 @@
     <%= render 'layouts/nav_bar' %>
     <%= render 'layouts/flash_messages' %>
 
-    <header class='clearfix'>
-    <div class="right-nav">
-      <ul>
-        <li><%= link_to "Upcoming Events", coming_events_path %></li>
-      </ul>
-    </div>
-  </header>
-
     <%= yield %>
     <%= render 'layouts/footer' %>
   </body>
