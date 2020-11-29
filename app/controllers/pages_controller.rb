@@ -11,4 +11,6 @@ class PagesController < ApplicationController
 
   def code_of_conduct; end
 
+  def coming_events; end
+
 end
