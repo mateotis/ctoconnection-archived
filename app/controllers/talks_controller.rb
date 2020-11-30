@@ -1,15 +1,20 @@
 class TalksController < ApplicationController
 
+    skip_before_action :authenticate_user!, except: :dashboard
+
     def upcoming_events
-        @talks = Talk.all
+        @talk = Talk.all
     end
 
-    def new; end
+    def new_events
+
+    end
 
     def show
         @talk = Talk.find(params[:id])
     end
 
+    
     def create; 
         @talk = Talk.new(talk_params)
 
