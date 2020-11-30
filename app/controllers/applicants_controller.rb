@@ -1,7 +1,8 @@
 class ApplicantsController < ApplicationController
 
 	protect_from_forgery with: :null_session
-
+	skip_before_action :authenticate_user!, except: :dashboard
+	
 	def new
 		@applicant = Applicant.new
 	end
