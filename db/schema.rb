@@ -61,13 +61,6 @@ ActiveRecord::Schema.define(version: 2020_11_29_160731) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "new_events", force: :cascade do |t|
-    t.datetime "cfp_start_time"
-    t.datetime "cfp_end_time"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "presentations", force: :cascade do |t|
     t.string "title"
     t.string "presenter_firstname"
@@ -102,8 +95,10 @@ ActiveRecord::Schema.define(version: 2020_11_29_160731) do
   end
 
   create_table "talks", force: :cascade do |t|
-    t.datetime "cfp_start_time"
-    t.datetime "cfp_end_time"
+    t.string "title"
+    t.string "description"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -115,11 +110,6 @@ ActiveRecord::Schema.define(version: 2020_11_29_160731) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email"
-    t.string "encrypted_password", limit: 128
-    t.string "confirmation_token", limit: 128
-    t.string "remember_token", limit: 128
-    t.index ["email"], name: "index_users_on_email"
-    t.index ["remember_token"], name: "index_users_on_remember_token"
   end
 
   add_foreign_key "activities", "sessions"

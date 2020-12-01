@@ -2,27 +2,26 @@ class TalksController < ApplicationController
 
     skip_before_action :authenticate_user!, except: :dashboard
 
-    def upcoming_events
-        @talk = Talk.all
-    end
+    protect_from_forgery with: :null_session
 
-    def new_events
-
+    def new
+        @talk = Talk.new
     end
 
     def show
         @talk = Talk.find(params[:id])
     end
 
-    
-    def create; 
+    def create
         @talk = Talk.new(talk_params)
-
-        @talk.save
-        redirect_to @talk
+        if @talk.save
+            redirect_to root_url
+        else
+            render :new
+        end
     end
 
-    private def talk_params
+    def talk_params
         params.require(:talk).permit(:title, :description, :start_time, :end_time)
     end
 
