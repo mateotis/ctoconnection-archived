@@ -9,8 +9,11 @@ Rails.application.routes.draw do
   get 'logout', to: 'auth0#logout'
   get 'apply/new', to: 'applicants#new'
   get 'apply', to: 'applicants#create'
+  get 'new_events', to: 'talks#new'
+  get 'upcoming_events', to: 'talks#upcoming_events'
 
   resources :applicants
+  resources :talks
 
   namespace :admin do
     root to: 'events#index'

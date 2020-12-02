@@ -1,0 +1,12 @@
+<div class='talk-submit-form'>
+
+<h1>Propose a Talk!</h1>
+<%= simple_form_for(@talk) do |f| %>
+    <%= f.input :title, required: true %>
+    <%= f.input :description, required: true %>
+    <%= f.input :start_time, required: true %>
+    <%= f.input :end_time, required: true%>
+    <%= f.button :submit %>
+  <% end %>
+
+</div>
