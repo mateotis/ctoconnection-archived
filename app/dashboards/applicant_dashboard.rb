@@ -64,7 +64,9 @@ class ApplicantDashboard < Administrate::BaseDashboard
   #   COLLECTION_FILTERS = {
   #     open: ->(resources) { resources.where(open: true) }
   #   }.freeze
-  COLLECTION_FILTERS = {}.freeze
+  COLLECTION_FILTERS = {
+    review: ->(resources) { resources.where(reviewed: false)}
+  }.freeze
 
   # Overwrite this method to customize how applicants are displayed
   # across all pages of the admin dashboard.
