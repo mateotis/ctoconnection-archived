@@ -8,6 +8,10 @@ class TalksController < ApplicationController
         @talk = Talk.new
     end
 
+    def upcoming_events
+        @talks = Talk.all
+    end
+
     def show
         @talk = Talk.find(params[:id])
     end
