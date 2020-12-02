@@ -27,4 +27,10 @@ Rails.application.routes.draw do
     root to: 'users#index'
     resources :users
   end
+
+  namespace :applicantadmin do
+    root to: 'applicants#index'
+    resources :applicants
+  end
+  
 end
