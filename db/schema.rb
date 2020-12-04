@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_17_224918) do
+ActiveRecord::Schema.define(version: 2020_12_02_111511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2020_11_17_224918) do
     t.string "linkedin_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "reviewed", default: false
   end
 
   create_table "companies", force: :cascade do |t|
@@ -57,6 +58,13 @@ ActiveRecord::Schema.define(version: 2020_11_17_224918) do
     t.string "title"
     t.datetime "starts"
     t.datetime "ends"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "new_events", force: :cascade do |t|
+    t.datetime "cfp_start_time"
+    t.datetime "cfp_end_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -94,6 +102,15 @@ ActiveRecord::Schema.define(version: 2020_11_17_224918) do
     t.index ["event_id"], name: "index_sessions_on_event_id"
   end
 
+  create_table "talks", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -101,11 +118,6 @@ ActiveRecord::Schema.define(version: 2020_11_17_224918) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email"
-    t.string "encrypted_password", limit: 128
-    t.string "confirmation_token", limit: 128
-    t.string "remember_token", limit: 128
-    t.index ["email"], name: "index_users_on_email"
-    t.index ["remember_token"], name: "index_users_on_remember_token"
   end
 
   add_foreign_key "activities", "sessions"

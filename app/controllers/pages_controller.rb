@@ -11,4 +11,5 @@ class PagesController < ApplicationController
 
   def code_of_conduct; end
 
+
 end
