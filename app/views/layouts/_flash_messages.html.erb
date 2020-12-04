@@ -1,7 +1,0 @@
-<% flash.each do |key, val| %>
-  <% unless val.empty? %>
-    <div class="<%= flash_class(key) %>" id="notice">
-      <%= val %>
-    </div>
-  <% end %>
-<% end %>
