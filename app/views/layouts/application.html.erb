@@ -27,15 +27,8 @@
 
   <body>
 
-    <% flash.each do |name, msg| %>
-      <ul>
-        <li><%= msg %></li>
-      </ul>
-    <% end %>
-
     <%= render 'layouts/nav_bar' %>
     <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.jpg');"></div>
-    <%= render 'layouts/flash_messages' %>
     <%= yield %>
     <%= render 'layouts/footer' %>
   </body>

@@ -3,7 +3,6 @@ class ApplicantsController < ApplicationController
 	skip_before_action :authenticate_user!, except: :dashboard
 
 	protect_from_forgery with: :null_session
-	skip_before_action :authenticate_user!, except: :dashboard
 	
 	def new
 		@applicant = Applicant.new
@@ -12,7 +11,6 @@ class ApplicantsController < ApplicationController
 	def create
 		@applicant = Applicant.new(applicant_params)
 		if @applicant.save
-			flash[:notice] = 'Thanks for applying!'
 			redirect_to root_url
 		else
 			render :new
