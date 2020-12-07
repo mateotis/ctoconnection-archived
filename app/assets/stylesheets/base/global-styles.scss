@@ -1,7 +1,14 @@
+
 html, body, header, footer, h1, h2, h3, h4, h5, h6, ul, li, p {
+  
   padding: 0;
   margin: 0;
+  
 }
+
+
+
+
 
 body {
   color: $default-text-color;
@@ -12,8 +19,6 @@ body {
 hr {
   border: none;
   height: 1px;
-  color: rgba($default-text-color, 0.3);
-  background-color: rgba($default-text-color, 0.3);
 }
 
 ul, li {
@@ -23,7 +28,6 @@ ul, li {
 }
 
 header {
-  background: white;
   padding: 0.5em 0;
 }
 
